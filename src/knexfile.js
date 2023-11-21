@@ -1,7 +1,7 @@
-require("dotenv").config();
+require('dotenv').config();
 
-const knex = require("knex")({
-  client: "mysql",
+const knex = require('knex')({
+  client: 'mysql',
   connection: {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -9,10 +9,10 @@ const knex = require("knex")({
     database: process.env.DB_DATABASE,
   },
   migrations: {
-    tableName: "knex_migrations",
-    directory: "./migrations",
+    tableName: 'knex_migrations',
+    directory: './migrations',
   },
-  debug: process.env.NODE_ENV === "production",
+  debug: process.env.NODE_ENV === 'production',
 });
 
 module.exports = knex;

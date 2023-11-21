@@ -1,4 +1,4 @@
-const { createUserSchema } = require("./user.schema");
+const { createUserSchema } = require('./user.schema');
 
 const validateCreateUserPayload = (req, res, next) => {
   const { error, value } = createUserSchema.validate(req.body);
