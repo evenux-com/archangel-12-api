@@ -1,4 +1,4 @@
-import knex from "../knexfile";
+import knex from '../knexfile';
 
 const createUser = async ({ email, password }) => {
   return await knex('users').insert({ email, password });
