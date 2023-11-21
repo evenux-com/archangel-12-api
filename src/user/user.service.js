@@ -1,4 +1,4 @@
-const knex = require('../knexfile');
+const knex = require("../knexfile");
 
 const createUser = async ({ email, password }) => {
   return await knex('users').insert({ email, password });
