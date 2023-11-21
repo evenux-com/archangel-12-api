@@ -1,4 +1,4 @@
-import { createUserSchema } from './user.schema';
+import { createUserSchema } from './user.schema.mjs';
 
 const validateCreateUserPayload = (req, res, next) => {
   const { error, value } = createUserSchema.validate(req.body);

@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import knex from './knexfile';
-import userController from './user/user.controller';
+import knex from './knexfile.mjs';
+import userController from './user/user.controller.mjs';
 
 const app = express();
 
