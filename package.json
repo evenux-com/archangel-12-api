@@ -7,18 +7,12 @@
     "start": "nodemon src/index.js",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "lint-and-format": "eslint --fix . && prettier --write ."
+    "lint-and-format": "eslint . --fix && prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint && npm run format && git add ."
     }
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write"
-    ]
   },
   "dependencies": {
     "dotenv": "^16.3.1",
@@ -32,7 +26,6 @@
     "eslint": "^8.54.0",
     "eslint-plugin-prettier": "^5.0.1",
     "husky": "^8.0.3",
-    "lint-staged": "^15.1.0",
     "nodemon": "^3.0.1",
     "prettier": "^3.1.0"
   }

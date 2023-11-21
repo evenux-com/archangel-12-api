@@ -18,7 +18,7 @@ const getUsers = async ({ page, limit }) => {
       data: users,
     };
   } catch (error) {
-    console.error('Error fetching users:', error);
+    console.error('Error fetching users -', error);
     throw error;
   }
 };
