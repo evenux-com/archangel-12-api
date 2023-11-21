@@ -1,7 +1,19 @@
 import knex from '../knexfile.mjs';
+import { sendEmail } from '../email/email.service.mjs';
 
 const createUser = async ({ email, password }) => {
-  return await knex('users').insert({ email, password });
+  const ids = await knex('users').insert({ email, password });
+  await sendEmail({
+    to: email,
+    subject: 'Archangel-12 :: User created',
+    template: 'user-created',
+    emailData: {
+      preview: 'This is a preview text...',
+      message: 'User successfully created!',
+    },
+  });
+
+  return { id: ids[0] };
 };
 
 const getUsers = async ({ page, limit }) => {
