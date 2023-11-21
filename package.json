@@ -5,11 +5,12 @@
   "scripts": {
     "start": "nodemon src/index.js",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint-and-format": "eslint --fix . && prettier --write ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint --fix . && prettier --write ."
+      "pre-commit": "npm run lint-and-format"
     }
   },
   "dependencies": {
