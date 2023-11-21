@@ -13,10 +13,9 @@
     }
   },
   "lint-staged": {
-    "*.{js}": [
-      "eslint .",
-      "prettier --write .",
-      "git add"
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
     ]
   },
   "dependencies": {
