@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 const createUserSchema = Joi.object({
   email: Joi.string().email().required(),
@@ -13,6 +13,4 @@ const createUserSchema = Joi.object({
   },
 });
 
-module.exports = {
-  createUserSchema,
-};
+export { createUserSchema };

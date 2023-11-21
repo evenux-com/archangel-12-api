@@ -1,4 +1,4 @@
-const knex = require("../knexfile");
+import knex from "../knexfile";
 
 const createUser = async ({ email, password }) => {
   return await knex('users').insert({ email, password });
@@ -12,7 +12,7 @@ const getUsers = async ({ page, limit }) => {
 
     return {
       pagination: {
-        page: page,
+        page,
         count: totalCount.total,
       },
       data: users,
@@ -23,7 +23,4 @@ const getUsers = async ({ page, limit }) => {
   }
 };
 
-module.exports = {
-  createUser,
-  getUsers,
-};
+export { createUser, getUsers };

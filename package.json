@@ -2,8 +2,9 @@
   "name": "f-22-api",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "nodemon src/index.js",
+    "start": "nodemon --experimental-modules src/index.js",
     "lint": "eslint .",
     "format": "prettier --write .",
     "lint-and-format": "eslint --fix . && prettier --write ."

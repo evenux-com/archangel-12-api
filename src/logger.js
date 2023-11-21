@@ -1,5 +1,6 @@
-const winston = require('winston');
-const path = require('path');
+import winston from 'winston';
+import path from 'path';
+
 const { combine, timestamp, printf } = winston.format;
 
 const logsFolderPath = path.join(__dirname, '../', 'logs');
@@ -27,4 +28,4 @@ const logger = winston.createLogger({
   ],
 });
 
-module.exports = logger;
+export default logger;

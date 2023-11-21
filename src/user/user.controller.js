@@ -1,7 +1,8 @@
-const express = require('express');
-const userService = require('./user.service');
-const { validateCreateUserPayload } = require('./user.middleware');
-const logger = require('../logger');
+import express from 'express';
+import userService from './user.service';
+import { validateCreateUserPayload } from './user.middleware';
+import logger from '../logger';
+
 const router = express.Router();
 
 router.post('/users', validateCreateUserPayload, async (req, res) => {
@@ -27,4 +28,4 @@ router.get('/users', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

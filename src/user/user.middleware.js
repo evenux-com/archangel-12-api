@@ -1,4 +1,4 @@
-const { createUserSchema } = require('./user.schema');
+import { createUserSchema } from './user.schema';
 
 const validateCreateUserPayload = (req, res, next) => {
   const { error, value } = createUserSchema.validate(req.body);
@@ -11,6 +11,4 @@ const validateCreateUserPayload = (req, res, next) => {
   next();
 };
 
-module.exports = {
-  validateCreateUserPayload,
-};
+export { validateCreateUserPayload };

@@ -1,7 +1,8 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const knex = require('./knexfile');
-const userController = require('./user/user.controller');
+import express from 'express';
+import bodyParser from 'body-parser';
+import knex from './knexfile';
+import userController from './user/user.controller';
+
 const app = express();
 
 app.use(bodyParser.json());
